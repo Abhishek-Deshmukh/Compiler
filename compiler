@@ -29,6 +29,7 @@ case "$file" in
 	*\.ts) tsc "$file" ;;
 	*\.html) $BROWSER "$file" ;;
 	*\.go) go run "$file" ;;
+	*\.rs) test -f ../Cargo.toml && cargo run || rustc "$file" && test -f ../Cargo.toml || "$base" ;;
 	*\.sent) setsid sent "$file" 2>/dev/null & ;;
 	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac
