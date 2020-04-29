@@ -23,6 +23,7 @@ Feel free to drop in issues.
 - .js (javascript - node)
 - .cpp (C++)
 - .go (go)
+- .rs (rust)
 - .sent (sent)
 
 ### Installation
